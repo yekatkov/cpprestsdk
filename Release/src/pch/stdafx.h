@@ -13,7 +13,7 @@
 
 #pragma once
 
-#include <FineObj.h>
+#include <FineObjectsStub.h>
 
 #if defined(__clang__)
 #pragma clang diagnostic push

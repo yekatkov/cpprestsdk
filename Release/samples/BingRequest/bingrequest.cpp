@@ -10,6 +10,8 @@
  * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
  ****/
 
+#include <FineObjectsStub.h>
+
 #include <cpprest/filestream.h>
 #include <cpprest/http_client.h>
 
@@ -17,6 +19,10 @@ using namespace utility;
 using namespace web::http;
 using namespace web::http::client;
 using namespace concurrency::streams;
+
+void InitializeModule() {}
+
+void DeinitializeModule() {}
 
 /* Can pass proxy information via environment variable http_proxy.
    Example:

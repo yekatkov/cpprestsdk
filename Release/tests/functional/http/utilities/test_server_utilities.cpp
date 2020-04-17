@@ -15,6 +15,10 @@
 
 #include "http_asserts.h"
 
+void InitializeModule() {}
+
+void DeinitializeModule() {}
+
 using namespace web;
 using namespace utility;
 

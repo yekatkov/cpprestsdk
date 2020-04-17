@@ -13,6 +13,8 @@
 
 #pragma once
 
+#include <FineObjectsStub.h>
+
 #include <fstream>
 #include <memory>
 #include <stdio.h>

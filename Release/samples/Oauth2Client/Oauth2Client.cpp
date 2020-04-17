@@ -9,6 +9,8 @@
  * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
  ****/
 
+#include <FineObjectsStub.h>
+
 /*
 
 INSTRUCTIONS
@@ -38,6 +40,10 @@ Set following entry in the hosts file:
 
 #include "cpprest/http_client.h"
 #include "cpprest/http_listener.h"
+
+void InitializeModule() {}
+
+void DeinitializeModule() {}
 
 using namespace utility;
 using namespace web;

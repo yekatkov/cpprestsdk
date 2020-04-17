@@ -12,3 +12,7 @@
 #if WIN32
 __declspec(dllexport) int pplx_test_generate_lib = 0;
 #endif
+
+void InitializeModule() {}
+
+void DeinitializeModule() {}

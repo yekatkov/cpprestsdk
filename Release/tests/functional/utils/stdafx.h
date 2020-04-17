@@ -14,6 +14,8 @@
 #pragma once
 #define _TURN_OFF_PLATFORM_STRING
 
+#include <FineObjectsStub.h>
+
 #include "cpprest/asyncrt_utils.h"
 #include "cpprest/details/web_utilities.h"
 #include "cpprest/uri.h"

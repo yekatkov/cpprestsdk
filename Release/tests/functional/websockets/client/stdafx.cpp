@@ -12,3 +12,7 @@
 #if WIN32
 __declspec(dllexport) int websocket_client_test_generate_lib = 0;
 #endif
+
+void InitializeModule() {}
+
+void DeinitializeModule() {}

@@ -37,6 +37,10 @@
 #include "Posix/SignalTranslator.h"
 #endif
 
+void InitializeModule() {}
+
+void DeinitializeModule() {}
+
 namespace UnitTest
 {
 Test::Test(char const* testName, char const* suiteName, char const* filename, int lineNumber)

@@ -43,6 +43,10 @@
 #pragma warning(pop)
 #endif
 
+void InitializeModule() {}
+
+void DeinitializeModule() {}
+
 using namespace web;
 using namespace utility;
 using namespace utility::conversions;

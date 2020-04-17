@@ -9,6 +9,8 @@
  * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
  ****/
 
+#include <FineObjectsStub.h>
+
 #ifdef _WIN32
 #include <SDKDDKVer.h>
 #include <stdio.h>
@@ -48,6 +50,10 @@ using namespace web;
 using namespace utility;
 using namespace http;
 using namespace http::client;
+
+void InitializeModule() {}
+
+void DeinitializeModule() {}
 
 http_response CheckResponse(const std::string& url, const http_response& response)
 {

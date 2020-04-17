@@ -9,6 +9,8 @@
  * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
  ****/
 
+ #include <FineObjectsStub.h>
+
 #include "os_utilities.h"
 
 #ifdef WIN32
@@ -19,6 +21,10 @@
 #else
 #include <unistd.h>
 #endif
+
+void InitializeModule() {}
+
+void DeinitializeModule() {}
 
 namespace tests
 {

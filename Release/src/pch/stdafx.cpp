@@ -15,6 +15,3 @@
 void InitializeModule() {}
 
 void DeinitializeModule() {}
-//
-//#define FINEOBJ_VERSION 12014
-//extern const __declspec(selectany) int UserModuleFineObjVersion = FINEOBJ_VERSION;

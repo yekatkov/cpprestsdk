@@ -187,9 +187,9 @@ SUITE(redirect_tests)
     {
 #if USING_WINHTTP
         // note that 308 Permanent Redirect is only supported by WinHTTP from Windows 10
-        if (!IsWindows10OrGreater()) {
+        //if (!IsWindows10OrGreater()) {
             return;
-        }
+        //}
 #endif // USING_WINHTTP
         test_http_server::scoped_server scoped(m_uri);
         auto p_server = scoped.server();

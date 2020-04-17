@@ -13,6 +13,8 @@
 
 #pragma once
 
+#include <FineObjectsStub.h>
+
 #include "cpprest/asyncrt_utils.h"
 #include "cpprest/http_listener.h"
 #include "cpprest/json.h"

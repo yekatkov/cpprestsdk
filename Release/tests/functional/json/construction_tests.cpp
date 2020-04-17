@@ -14,6 +14,12 @@
 #include "cpprest/json.h"
 #include "unittestpp.h"
 
+#include <FineObjectsStub.h>
+
+void InitializeModule() {}
+
+void DeinitializeModule() {}
+
 using namespace web;
 using namespace utility;
 

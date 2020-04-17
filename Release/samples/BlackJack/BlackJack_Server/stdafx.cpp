@@ -10,3 +10,7 @@
  ****/
 
 #include "stdafx.h"
+
+void InitializeModule() {}
+
+void DeinitializeModule() {}

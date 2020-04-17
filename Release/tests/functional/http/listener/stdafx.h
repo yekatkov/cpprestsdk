@@ -15,6 +15,8 @@
 
 #pragma once
 
+#include <FineObjectsStub.h>
+
 #include "cpprest/asyncrt_utils.h"
 #include "cpprest/filestream.h"
 #include "cpprest/http_client.h"

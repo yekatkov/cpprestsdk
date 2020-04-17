@@ -7,6 +7,8 @@
 // TestRunner.cpp : Defines the entry point for the console application.
 //
 
+#include <FineObjectsStub.h>
+
 #include <algorithm>
 #include <iostream>
 #include <map>
@@ -30,6 +32,10 @@
 #include "../UnitTestpp/src/TestReporterStdout.h"
 #include "../UnitTestpp/src/TimeHelpers.h"
 #include "test_module_loader.h"
+
+void InitializeModule() {}
+
+void DeinitializeModule() {}
 
 static void print_help()
 {

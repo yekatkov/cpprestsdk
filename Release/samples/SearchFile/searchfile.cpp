@@ -10,9 +10,15 @@
  * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
  ****/
 
+#include <FineObjectsStub.h>
+
 #include "cpprest/containerstream.h"
 #include "cpprest/filestream.h"
 #include "cpprest/producerconsumerstream.h"
+
+void InitializeModule() {}
+
+void DeinitializeModule() {}
 
 using namespace utility;
 using namespace concurrency::streams;

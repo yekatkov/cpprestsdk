@@ -13,6 +13,8 @@
 
 #pragma once
 
+#include <FineObjectsStub.h>
+
 #include "cpprest/asyncrt_utils.h"
 #include "cpprest/uri.h"
 #include "unittestpp.h"
