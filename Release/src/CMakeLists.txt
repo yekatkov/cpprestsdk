@@ -40,6 +40,20 @@ set(SOURCES
 )
 
 add_library(cpprest ${SOURCES})
+
+set(CMAKE_BUILD_TYPE "Debug")
+target_link_directories(cpprest PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../FineObjects/FineObjects/lib)
+target_include_directories(cpprest PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../FineObjects/FineObjects/Inc)
+
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    target_link_libraries(cpprest PRIVATE FineObj.x64.Debug FineObjStaticPart.x64.Debug msvcrtd msvcprtd)
+elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
+	target_link_libraries(cpprest PRIVATE FineObj.x64.Release FineObjStaticPart.x64.Release msvcrt msvcprt)
+endif()
+
+target_compile_definitions(cpprest PUBLIC -D_BUILD_CPPREST)
+#target_link_options(cpprest PRIVATE /VERBOSE:lib)
+
 target_include_directories(cpprest
   PUBLIC
     $<INSTALL_INTERFACE:include> $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
