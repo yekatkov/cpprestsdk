@@ -57,7 +57,7 @@ web::http::client::http_client_config client_config_for_proxy()
 #ifdef _WIN32
 int wmain(int argc, wchar_t* args[])
 #else
-int main(int argc, char* args[])
+int FineMain(int argc, char* args[])
 #endif
 {
     if (argc != 3)

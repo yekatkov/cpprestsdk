@@ -1,13 +1,29 @@
 #pragma once 
 
-#include <SDKDDKVer.h>
-
 #define FINEOBJ_VERSION 12014
-extern const __declspec(selectany) int UserModuleFineObjVersion = FINEOBJ_VERSION;
 
-#if !defined( _MT )
-	#error FineObjects can not be used with single-threaded runtime libraries
+#ifdef _WIN32
+	#include <SDKDDKVer.h>
+	#if !defined( _MT )
+		#error FineObjects can not be used with single-threaded runtime libraries
+	#endif
+	extern const __declspec(selectany) int UserModuleFineObjVersion = FINEOBJ_VERSION;
+	//
+	// На Win64 и Win32 различная декорация имён:
+	// подстрочная черта на Win64 не добавляется.
+	//
+	#ifdef _WIN64
+	#define VARIABLE_DECORATION ""
+	#else
+	#define VARIABLE_DECORATION "_"
+	#endif
+	
+	#pragma comment( linker, "/include:" VARIABLE_DECORATION "__FineObjDll" )
+	#pragma comment( linker, "/include:" VARIABLE_DECORATION "__FineObjUsed" )
+#else
+	extern const __attribute__((weak)) int UserModuleFineObjVersion = FINEOBJ_VERSION;
 #endif
+
 
 // Макросы для заголовков Platform SDK
 #define NOMINMAX
@@ -38,19 +54,6 @@ extern const __declspec(selectany) int UserModuleFineObjVersion = FINEOBJ_VERSIO
 #ifndef NO_SHLWAPI_STRFCNS
 #define NO_SHLWAPI_STRFCNS
 #endif
-
-//
-// На Win64 и Win32 различная декорация имён:
-// подстрочная черта на Win64 не добавляется.
-//
-#ifdef _WIN64
-#define VARIABLE_DECORATION ""
-#else
-#define VARIABLE_DECORATION "_"
-#endif
-
-#pragma comment( linker, "/include:" VARIABLE_DECORATION "__FineObjDll" )
-#pragma comment( linker, "/include:" VARIABLE_DECORATION "__FineObjUsed" )
 
 // Определяем этот макрос, чтобы runtime не декларировал свои версии операторов new и delete
 // В заголовках runtime операторы new и delete объявляются как dllimport

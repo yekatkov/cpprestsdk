@@ -166,7 +166,7 @@ void PrintTable(const http_response& response, bool& refresh)
 #ifdef _WIN32
 int wmain(int argc, wchar_t* argv[])
 #else
-int main(int argc, char* argv[])
+int FineMain(int argc, char* argv[])
 #endif
 {
     utility::string_t port = U("34568");

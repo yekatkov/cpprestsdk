@@ -41,15 +41,20 @@ set(SOURCES
 
 set(CMAKE_BUILD_TYPE "Debug" CACHE STRING "")
 set(FINEOBJ_STUB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/FineObjects)
-if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-    set(FINEOBJ_LIBS FineObj.x64.Debug FineObjStaticPart.x64.Debug msvcrtd msvcprtd)
-elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
-	set(FINEOBJ_LIBS FineObj.x64.Release FineObjStaticPart.x64.Release msvcrt msvcprt)
-endif()
 
 add_library(cpprest ${SOURCES})
 
-target_link_directories(cpprest PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../../FineObjects/FineObjects/lib>)
+if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+	set(FINEOBJ_LIBS "-Wl,--whole-archive" FineObjStaticPart "-Wl,--no-whole-archive"  FineObj dl)
+	target_link_directories(cpprest PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../../FineObjects/X.Linux.${CMAKE_BUILD_TYPE}/x86_64>)
+elseif(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+	if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+		set(FINEOBJ_LIBS FineObj.x64.Debug FineObjStaticPart.x64.Debug msvcrtd msvcprtd)
+	elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
+		set(FINEOBJ_LIBS FineObj.x64.Release FineObjStaticPart.x64.Release msvcrt msvcprt)
+	endif()
+	target_link_directories(cpprest PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../../FineObjects/FineObjects/lib>)
+endif()
 target_include_directories(cpprest PUBLIC $<BUILD_INTERFACE:${FINEOBJ_STUB_DIR}>)
 target_link_libraries(cpprest PUBLIC ${FINEOBJ_LIBS})
 
