@@ -288,7 +288,7 @@ protected:
 #ifdef _WIN32
 int wmain(int argc, wchar_t* argv[])
 #else
-int main(int argc, char* argv[])
+int FineMain(int argc, char* argv[])
 #endif
 {
     ucout << "Running OAuth 1.0 client sample..." << std::endl;
