@@ -548,16 +548,17 @@ int main(int argc, char* argv[])
     } local;
 #endif
 
-	char** argv_ = argv;
 #ifndef _WIN32
-	std::wstring_convert<std::codecvt_utf8<wchar_t>> conv;
+    std::wstring_convert<std::codecvt_utf8<wchar_t>> conv;
     std::vector<std::string> argvStringArray(argc);
     std::vector<const char*> argvStr( argc );
-	for( int i = 0; i < argc; i++ ) {
-		argvStringArray.emplace_back( conv.to_bytes( argv[i] ) );
-		argvStr[i] = argvStringArray.back().c_str();
-	}
-    argv_ = const_cast<char**>(argvStr.data());
+    for( int i = 0; i < argc; i++ ) {
+        argvStringArray.emplace_back( conv.to_bytes( argv[i] ) );
+        argvStr[i] = argvStringArray.back().c_str();
+    }
+    char** argv_ = const_cast<char**>(argvStr.data());
+#else
+    char** argv_ = argv;
 #endif
     if (parse_command_line(argc, argv_) != 0)
     {
