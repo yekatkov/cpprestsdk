@@ -32,4 +32,7 @@ if (NOT CPPREST_EXCLUDE_WEBSOCKETS)
     target_link_libraries(websocketsclient_test PRIVATE websockettest_utilities)
   endif()
   target_include_directories(websocketsclient_test PRIVATE utilities)
+
+  include(Settings)
+  unexport_symbols(websockettest_utilities)
 endif()

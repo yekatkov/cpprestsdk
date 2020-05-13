@@ -25,3 +25,7 @@ if(NOT WIN32 OR CPPREST_WEBSOCKETS_IMPL STREQUAL "wspp")
 endif()
 
 configure_pch(streams_test stdafx.h stdafx.cpp)
+
+
+include(Settings)
+unexport_symbols(streams_test)

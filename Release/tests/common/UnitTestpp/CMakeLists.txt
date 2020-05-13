@@ -57,3 +57,7 @@ target_link_libraries(unittestpp ${ANDROID_STL_FLAGS})
 
 target_include_directories(unittestpp PRIVATE src)
 target_include_directories(unittestpp PUBLIC .)
+
+
+include(Settings)
+unexport_symbols(unittestpp)

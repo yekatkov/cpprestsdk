@@ -14,3 +14,7 @@ set(SOURCES
 add_casablanca_test(uri_test SOURCES)
 
 configure_pch(uri_test stdafx.h stdafx.cpp)
+
+
+include(Settings)
+unexport_symbols(uri_test)

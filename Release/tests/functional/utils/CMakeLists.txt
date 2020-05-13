@@ -14,3 +14,7 @@ if(CMAKE_COMPILER_IS_GNUCXX)
 endif()
 
 configure_pch(utils_test stdafx.h stdafx.cpp)
+
+
+include(Settings)
+unexport_symbols(utils_test)

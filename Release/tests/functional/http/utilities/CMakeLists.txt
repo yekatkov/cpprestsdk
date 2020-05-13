@@ -18,3 +18,7 @@ target_link_libraries(httptest_utilities PUBLIC
 if(WINDOWS_STORE)
   target_compile_options(httptest_utilities PRIVATE /DWINAPI_FAMILY=WINAPI_FAMILY_DESKTOP_APP)
 endif()
+
+
+include(Settings)
+unexport_symbols(httptest_utilities)

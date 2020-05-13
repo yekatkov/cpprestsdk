@@ -11,3 +11,7 @@ add_executable(blackjackserver
 target_link_libraries(blackjackserver cpprest)
 
 configure_pch(blackjackserver stdafx.h stdafx.cpp /Zm120)
+
+
+include(Settings)
+unexport_symbols(blackjackserver)

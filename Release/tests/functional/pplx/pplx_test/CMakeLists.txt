@@ -7,3 +7,7 @@ set(SOURCES
 add_casablanca_test(pplx_test SOURCES)
 
 configure_pch(pplx_test stdafx.h stdafx.cpp)
+
+
+include(Settings)
+unexport_symbols(pplx_test)

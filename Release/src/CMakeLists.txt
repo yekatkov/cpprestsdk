@@ -314,3 +314,6 @@ if(CPPREST_INSTALL)
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/${CPPREST_EXPORT_DIR}
   )
 endif()
+
+include(Settings)
+unexport_symbols(cpprest)

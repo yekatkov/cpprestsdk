@@ -24,3 +24,7 @@ if(NOT WINDOWS_STORE AND NOT WINDOWS_PHONE)
 
   configure_pch(httplistener_test stdafx.h stdafx.cpp)
 endif()
+
+
+include(Settings)
+unexport_symbols(httplistener_test)

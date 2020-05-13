@@ -4,4 +4,7 @@ if (NOT WINDOWS_STORE AND NOT WINDOWS_PHONE)
     )
 
   target_link_libraries(oauth1client cpprest)
+
+  include(Settings)
+  unexport_symbols(oauth1client)
 endif()

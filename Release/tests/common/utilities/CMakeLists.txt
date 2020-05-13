@@ -16,3 +16,6 @@ target_link_libraries(common_utilities
   cpprest
   unittestpp
 )
+
+include(Settings)
+unexport_symbols(common_utilities)
