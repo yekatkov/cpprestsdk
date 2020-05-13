@@ -506,11 +506,13 @@ void run_all_tests(UnitTest::TestRunner& testRunner, testlist_t& testlists)
 #include "ROApi.h"
 #endif
 
-//#ifndef _WIN32
-//int FineMain(int argc, wchar_t* argv[])
-//#else
+#ifdef _WIN32
+__declspec(dllexport) int my_main(int argc, char* argv[]);
+#else
+__attribute__((visibility("default"))) int my_main(int argc, char* argv[]);
+#endif
+
 int my_main(int argc, char* argv[])
-//#endif
 {
 #if defined(__cplusplus_winrt)
     Windows::Foundation::Initialize(RO_INIT_MULTITHREADED);
@@ -548,19 +550,7 @@ int my_main(int argc, char* argv[])
     } local;
 #endif
 
-//#ifndef _WIN32
-//    std::wstring_convert<std::codecvt_utf8<wchar_t>> conv;
-//    std::vector<std::string> argvStringArray(argc);
-//    std::vector<const char*> argvStr( argc );
-//    for( int i = 0; i < argc; i++ ) {
-//        argvStringArray.emplace_back( conv.to_bytes( argv[i] ) );
-//        argvStr[i] = argvStringArray.back().c_str();
-//    }
-//    char** argv_ = const_cast<char**>(argvStr.data());
-//#else
-    char** argv_ = argv;
-//#endif
-    if (parse_command_line(argc, argv_) != 0)
+    if (parse_command_line(argc, argv) != 0)
     {
         return -1;
     }

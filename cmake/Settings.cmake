@@ -5,7 +5,7 @@
 # Unexport symbols in shared libs (new/delete) for Linux/Android targets.
 function(unexport_symbols TARGET_NAME)
     get_target_property(TARGET_TYPE ${TARGET_NAME} TYPE)
-    if(TARGET_TYPE STREQUAL "SHARED_LIBRARY")
+    if(TARGET_TYPE STREQUAL "SHARED_LIBRARY" AND CMAKE_SYSTEM_NAME STREQUAL "Linux" )
 		
 		set(LINK_CMD_FILE link.txt)
 

@@ -59,6 +59,8 @@ else()
   set(Boost_USE_STATIC_LIBS OFF CACHE BOOL "Link against boost statically.")
 endif()
 
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../cmake)
+
 include(cmake/cpprest_find_boost.cmake)
 include(cmake/cpprest_find_zlib.cmake)
 include(cmake/cpprest_find_winhttppal.cmake)
