@@ -9,6 +9,7 @@
  * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
  ****/
 
+#include <FineObj.h>
 #include "cpprest/json.h"
 #include "unittestpp.h"
 
@@ -17,7 +18,7 @@ using namespace utility;
 
 namespace tests
 {
-namespace functional
+namespace functionalFine
 {
 namespace json_tests
 {

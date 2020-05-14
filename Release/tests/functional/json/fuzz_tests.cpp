@@ -10,6 +10,7 @@
  * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
  ****/
 
+#include <FineObj.h>
 #include "cpprest/json.h"
 #include "cpprest/containerstream.h"
 #include "cpprest/filestream.h"

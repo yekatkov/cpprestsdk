@@ -10,7 +10,7 @@
  * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
  ****/
 
-#include <FineObjectsStub.h>
+#include <FineObj.h>
 
 #include <cpprest/filestream.h>
 #include <cpprest/http_client.h>

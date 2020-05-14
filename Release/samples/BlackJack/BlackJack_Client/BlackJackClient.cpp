@@ -9,7 +9,7 @@
  * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
  ****/
 
-#include <FineObjectsStub.h>
+#include <FineObj.h>
 
 #ifdef _WIN32
 #include <SDKDDKVer.h>

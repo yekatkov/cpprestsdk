@@ -1936,7 +1936,7 @@ private:
         }
 
         // We're good.
-        winhttp_client* winclnt = reinterpret_cast<winhttp_client*>(p_request_context->m_http_client.get());
+        winhttp_client* winclnt = static_cast<winhttp_client*>(p_request_context->m_http_client.get());
         winclnt->_start_request_send(p_request_context, content_length);
 
         // We will not complete the request. Instead wait for the response to the request that was resent

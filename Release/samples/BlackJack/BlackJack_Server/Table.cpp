@@ -497,7 +497,7 @@ void DealerTable::FillShoe(size_t decks)
         for (size_t i = 0; i < decks * 52; i++)
         {
             int other = dist(eng);
-            swap(shoe[i], shoe[other]);
+            std::swap(shoe[i], shoe[other]);
         }
     }
 

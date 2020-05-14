@@ -7,7 +7,7 @@
 // TestRunner.cpp : Defines the entry point for the console application.
 //
 
-#include <FineObjectsStub.h>
+#include <FineObj.h>
 
 #include <algorithm>
 #include <iostream>

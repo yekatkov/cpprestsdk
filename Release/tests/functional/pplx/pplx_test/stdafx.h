@@ -11,7 +11,7 @@
 
 #pragma once
 
-#include <FineObjectsStub.h>
+#include <FineObj.h>
 
 #ifdef _WIN32
 #include <Windows.h>

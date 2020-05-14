@@ -10,7 +10,7 @@
  * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
  ****/
 
-#include <FineObjectsStub.h>
+#include <FineObj.h>
 
 #include "cpprest/containerstream.h"
 #include "cpprest/filestream.h"

@@ -118,6 +118,8 @@ endif()
 set(WARNINGS)
 set(ANDROID_LIBS)
 
+add_definitions(-D_FINE_STL -D_USRDLL)
+
 # Platform (not compiler) specific settings
 if(ANDROID)
   # These are used in the shared library case
@@ -127,8 +129,6 @@ elseif(WIN32)
   add_definitions(-DUNICODE -D_UNICODE -DWIN32 -D_SCL_SECURE_NO_WARNINGS)
   if(CMAKE_SYSTEM_NAME STREQUAL "WindowsStore")
     add_definitions(-D_WIN32_WINNT=0x0A00)
-  else()
-    add_definitions(-D_WIN32_WINNT=0x0600)
   endif()
 
   if(NOT BUILD_SHARED_LIBS)

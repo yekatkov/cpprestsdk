@@ -19,7 +19,10 @@
 
 // For single_core test case.
 #if defined(_WIN32) && _MSC_VER < 1900
+#pragma warning(push)
+#pragma warning(disable : 4619) // #pragma warning : there is no warning number 'number'
 #include <concrt.h>
+#pragma warning(push)
 #endif
 
 using namespace utility;

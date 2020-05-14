@@ -31,7 +31,7 @@
 
 #pragma once
 
-#include <FineObjectsStub.h>
+#include <FineObj.h>
 
 #include "../config.h"
 #include "AssertException.h"

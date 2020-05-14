@@ -11,7 +11,7 @@
 
 #pragma once
 
-#include <FineObjectsStub.h>
+#include <FineObj.h>
 
 #if defined(_WIN32)
 // Include first to avoid any issues with Windows.h.

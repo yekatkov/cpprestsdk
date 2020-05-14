@@ -37,7 +37,10 @@ _ASYNCRTIMP const std::shared_ptr<scheduler_interface>& __cdecl get_cpprestsdk_a
 } // namespace Concurrency
 
 #if (_MSC_VER >= 1900)
+#pragma warning(push)
+#pragma warning(disable : 4619) // #pragma warning : there is no warning number 'number'
 #include <concrt.h>
+#pragma warning(push)
 namespace Concurrency
 {
 namespace extensibility

@@ -9,7 +9,7 @@
  * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
  ****/
 
- #include <FineObjectsStub.h>
+ #include <FineObj.h>
 
 #include "os_utilities.h"
 

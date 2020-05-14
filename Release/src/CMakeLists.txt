@@ -40,7 +40,6 @@ set(SOURCES
 )
 
 set(CMAKE_BUILD_TYPE "Debug" CACHE STRING "")
-set(FINEOBJ_STUB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/FineObjects)
 
 add_library(cpprest ${SOURCES})
 
@@ -55,7 +54,9 @@ elseif(CMAKE_SYSTEM_NAME STREQUAL "Windows")
 	endif()
 	target_link_directories(cpprest PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../../FineObjects/FineObjects/lib>)
 endif()
-target_include_directories(cpprest PUBLIC $<BUILD_INTERFACE:${FINEOBJ_STUB_DIR}>)
+target_include_directories(cpprest PUBLIC 
+	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/FineObjects>
+	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../../FineObjects/FineObjects/Inc>)
 target_link_libraries(cpprest PUBLIC ${FINEOBJ_LIBS})
 
 target_compile_definitions(cpprest PUBLIC -D_BUILD_CPPREST)

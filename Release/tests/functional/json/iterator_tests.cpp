@@ -11,6 +11,7 @@
  * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
  ****/
 
+#include <FineObj.h>
 #include "cpprest/json.h"
 #include "unittestpp.h"
 #include <algorithm>
