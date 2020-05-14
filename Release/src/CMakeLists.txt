@@ -46,6 +46,24 @@ add_library(cpprest ${SOURCES})
 if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
 	set(FINEOBJ_LIBS "-Wl,--whole-archive" FineStlStaticPart "-Wl,--no-whole-archive"  FineObj dl)
 	target_link_directories(cpprest PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../../FineObjects/X.Linux.${CMAKE_BUILD_TYPE}/x86_64>)
+	target_compile_definitions(cpprest PUBLIC
+		-D_PLATFORM_64_BIT
+		-DNO_ASSEMBLER
+		-DHAS_PTHREADS
+		-DMMAP_HAS_GROWSDOWN=1
+		-DLINUX
+		-D_LINUX
+		-D_CUSTOM_PLATFORM
+		-D_AVOID_TOWCTRANS
+		-D_UNICODE
+		-DUNICODE
+		-D_NATIVE_WCHAR_T_DEFINED
+		-D__LITTLE_ENDIAN__
+		-D_MT
+		)
+	target_include_directories(cpprest PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../../FineObjects/FineObjects/PortLayer/Inc>
+		$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../../FineObjects/FineObjects/PortLayer/Linux/Inc>)
+	target_compile_options(cpprest PUBLIC "-w")
 elseif(CMAKE_SYSTEM_NAME STREQUAL "Windows")
 	if(CMAKE_BUILD_TYPE STREQUAL "Debug")
 		set(FINEOBJ_LIBS FineObj.x64.Debug FineStlStaticPart.x64.Debug msvcrtd msvcprtd)
@@ -54,9 +72,7 @@ elseif(CMAKE_SYSTEM_NAME STREQUAL "Windows")
 	endif()
 	target_link_directories(cpprest PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../../FineObjects/FineObjects/lib>)
 endif()
-target_include_directories(cpprest PUBLIC 
-	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/FineObjects>
-	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../../FineObjects/FineObjects/Inc>)
+target_include_directories(cpprest PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../../FineObjects/FineObjects/Inc>)
 target_link_libraries(cpprest PUBLIC ${FINEOBJ_LIBS})
 
 target_compile_definitions(cpprest PUBLIC -D_BUILD_CPPREST)
